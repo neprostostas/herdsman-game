@@ -1,0 +1,24 @@
+{
+  "name": "Herdsman Game",
+  "short_name": "Herdsman",
+  "description": "A minimalistic 2D herding game prototype built with TypeScript and PixiJS. Control the hero, collect animals, and guide them safely into the yard.",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#2ecc71",
+  "theme_color": "#2ecc71",
+  "orientation": "landscape",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "./assets/ico.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment"],
+  "screenshots": [],
+  "features": ["Cross Platform", "Offline Capable"],
+  "shortcuts": []
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herdsman Game</title>
+  <meta name="description" content="A minimalistic 2D herding game prototype built with TypeScript and PixiJS. Control the hero, collect animals, and guide them safely into the yard.">
+  <meta name="author" content="neprostostas">
+  <meta name="keywords" content="herdsman game, pixijs, typescript game, 2D prototype, animal herding, mini game">
+  <meta name="theme-color" content="#2ecc71">
+  <link rel="icon" type="image/svg+xml" href="./assets/ico.svg" />
+  <link rel="apple-touch-icon" href="./assets/ico.svg">
+  <link rel="manifest" href="./manifest.json">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Herdsman Game">
+  <meta property="og:description" content="A minimalistic 2D herding game prototype built with TypeScript and PixiJS. Control the hero, collect animals, and guide them safely into the yard.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost/">
+  <meta property="og:image" content="./assets/ico.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Herdsman Game">
+  <meta name="twitter:description" content="A minimalistic 2D herding game prototype built with TypeScript and PixiJS. Control the hero, collect animals, and guide them safely into the yard.">
+  <meta name="twitter:image" content="./assets/ico.svg">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div id="lang-switcher">
+      <select id="lang-select" aria-label="Language">
+        <option value="en">🇬🇧 EN</option>
+        <option value="uk">🇺🇦 UK</option>
+        <option value="es">🇪🇸 ES</option>
+        <option value="pl">🇵🇱 PL</option>
+      </select>
+    </div>
+    
+    <button id="pause-btn" class="pause-button" style="display: none;" data-i18n="pause">Pause</button>
+    
+    <div id="pause-overlay" class="pause-overlay" style="display: none;">
+      <div class="pause-modal">
+        <h2 data-i18n="pause">Pause</h2>
+        <div class="fun-fact">
+          <p id="fun-fact-text">Fun fact will appear here...</p>
+        </div>
+        <button id="resume-btn" class="resume-button" data-i18n="resume">Resume</button>
+      </div>
+    </div>
+    
+    <div id="completion-overlay" class="completion-overlay" style="display: none;">
+      <div class="completion-modal">
+        <h2 data-i18n="gameCompleted">Game Completed</h2>
+        <h2 data-i18n="gameCompleted2">Congratulations!🎉🥳</h2>
+        <div class="completion-stats">
+          <div class="time-stat">
+            <span data-i18n="yourTime">Your time</span>: <span id="current-time">00:00.0</span>
+          </div>
+          <div class="time-stat">
+            <span data-i18n="bestTime">Best time</span>: <span id="best-time">--:--.-</span>
+          </div>
+        </div>
+        <button id="play-again-btn" class="play-again-button" data-i18n="playAgain">Play Again</button>
+      </div>
+    </div>
+    
+  <div id="start-overlay">
+    <div class="overlay-content">
+      <h1 data-i18n="title">Herdsman Game</h1>
+      <div class="instructions">
+        <h2 data-i18n="controlsHeading">Controls</h2>
+        <ul>
+          <li data-i18n="controlClick">Click anywhere to move the Hero.</li>
+          <li data-i18n="controlDrag">Hold the mouse button and drag to make the Hero follow the cursor.</li>
+          <li data-i18n="controlKeys">Use Arrow Keys or W/A/S/D to move the Hero.</li>
+        </ul>
+        <h2 data-i18n="goalsHeading">Goal</h2>
+        <ul>
+          <li data-i18n="goalCollect">Collect animals by moving close to them (max 5 at a time).</li>
+          <li data-i18n="goalDeliver">Lead them into the paddock to score points.</li>
+        </ul>
+      </div>
+      <button id="start-btn" type="button" data-i18n="startGame">Start Game</button>
+    </div>
+  </div>
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
