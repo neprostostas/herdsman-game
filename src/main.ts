@@ -1,6 +1,46 @@
 import { Application, Graphics, Text, Sprite, Assets } from "pixi.js";
 import { translations, getInitialLanguage, setLanguage, t, type LangCode } from "./i18n";
 
+// Font loading utility
+function loadFont(fontFamily: string, fontWeight: string = "400"): Promise<void> {
+  return new Promise((resolve, reject) => {
+    // Check if font is already loaded
+    if (document.fonts && document.fonts.check) {
+      if (document.fonts.check(`${fontWeight} 16px ${fontFamily}`)) {
+        resolve();
+        return;
+      }
+    }
+
+    // Fallback: wait for font to load using FontFace API
+    if (document.fonts && document.fonts.load) {
+      document.fonts.load(`${fontWeight} 16px ${fontFamily}`).then(() => {
+        resolve();
+      }).catch(() => {
+        // If FontFace API fails, try a different approach
+        setTimeout(() => {
+          if (document.fonts && document.fonts.check) {
+            if (document.fonts.check(`${fontWeight} 16px ${fontFamily}`)) {
+              resolve();
+            } else {
+              // Font still not loaded, but continue anyway
+              console.warn(`Font ${fontFamily} may not be fully loaded`);
+              resolve();
+            }
+          } else {
+            resolve();
+          }
+        }, 100);
+      });
+    } else {
+      // Fallback for older browsers
+      setTimeout(() => {
+        resolve();
+      }, 100);
+    }
+  });
+}
+
 const app = new Application();
 await app.init({
   width: window.innerWidth,
@@ -27,6 +67,10 @@ let gameStartTime = 0;
 let gameEndTime = 0;
 const BEST_TIME_KEY = "herdsman_best_time";
 
+// Wait for font to load before creating text
+await loadFont("Montserrat", "400");
+console.log("Montserrat font loaded, creating text...");
+
 // Текст рахунку у верхньому лівому куті (оголошено рано для i18n)
 let score = 0;
 const scoreText = new Text({
@@ -40,6 +84,7 @@ const scoreText = new Text({
 scoreText.x = 20;
 scoreText.y = 15;
 app.stage.addChild(scoreText);
+
 const startOverlay = document.getElementById("start-overlay");
 const startBtn = document.getElementById("start-btn");
 if (startBtn) {

@@ -50,21 +50,24 @@ table {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+  src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+  font-display: swap;
 }
 
 /* FS Elliot Pro */
@@ -72,21 +75,21 @@ table {
   font-family: 'FS Elliot Pro';
   font-display: swap;
   font-weight: 400;
-  src: url('../fonts/FSElliotPro-Regular.woff2') format("woff2");
+  src: url('fonts/FSElliotPro-Regular.woff2') format("woff2");
 }
 
 @font-face {
   font-family: 'FS Elliot Pro';
   font-display: swap;
   font-weight: 700;
-  src: url('../fonts/FSElliotPro-Bold.woff2') format("woff2")
+  src: url('fonts/FSElliotPro-Bold.woff2') format("woff2")
 }
 
 @font-face {
   font-family: 'FS Elliot Pro';
   font-display: swap;
   font-weight: 900;
-  src: url('../fonts/FSElliotPro-Heavy.woff2') format("woff2")
+  src: url('fonts/FSElliotPro-Heavy.woff2') format("woff2")
 }
 
 * {
@@ -159,6 +162,7 @@ body {
 }
 
 #lang-select {
+  font-family: "Montserrat", sans-serif;
   padding: 8px 12px;
   border-radius: 8px;
   border: 2px solid rgba(255,255,255,0.3);
@@ -238,6 +242,7 @@ body {
 
 /* Pause Button */
 .pause-button {
+  font-family: "Montserrat", sans-serif;
   position: fixed;
   top: 20px;
   right: 120px;
