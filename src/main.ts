@@ -69,7 +69,6 @@ const BEST_TIME_KEY = "herdsman_best_time";
 
 // Wait for font to load before creating text
 await loadFont("Montserrat", "400");
-console.log("Montserrat font loaded, creating text...");
 
 // Текст рахунку у верхньому лівому куті (оголошено рано для i18n)
 let score = 0;
@@ -600,7 +599,6 @@ app.ticker.add(() => {
   (triggerAutoDelivery as any)._prev = (triggerAutoDelivery as any)._prev ?? false;
   const prev = (triggerAutoDelivery as any)._prev as boolean;
   if (!prev && heroInYardNow) {
-    console.log("Hero touched yard - triggering auto-delivery");
     triggerAutoDelivery();
   }
   (triggerAutoDelivery as any)._prev = heroInYardNow;
@@ -878,25 +876,16 @@ app.ticker.add(() => {
     // Find all currently following animals
     const followingAnimals = animals.filter(a => a.state === "following");
     
-    if (followingAnimals.length === 0) {
-      console.log("No following animals to trigger auto-delivery for");
-      return;
-    }
-    
-    console.log(`Triggering auto-delivery for ${followingAnimals.length} animals`);
-    
     // Switch them to autoDeliver mode
     for (const a of followingAnimals) {
       a.state = "autoDeliver";
       a.autoTarget = randomPointInYard(8);
       // Clear patrol target to ensure they focus on delivery
       a.patrolTarget = undefined;
-      console.log(`Animal switched to autoDeliver, target: ${a.autoTarget.x}, ${a.autoTarget.y}`);
     }
     
     // Clear the following group count to reset the cap
     followersCount = 0;
-    console.log("Following group cleared, followersCount reset to 0");
   }
 
 });
