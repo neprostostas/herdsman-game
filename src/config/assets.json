@@ -1,0 +1,24 @@
+{
+  "textures": {
+    "hero": "/assets/hero.png",
+    "animal": "/assets/animal.png",
+    "animalOn": "/assets/animal-on.png",
+    "paddock": "/assets/paddock.png",
+    "background": "/assets/bg.png"
+  },
+  "fonts": {
+    "montserrat": {
+      "regular": "/fonts/Montserrat-Regular.ttf",
+      "medium": "/fonts/Montserrat-Medium.ttf",
+      "bold": "/fonts/Montserrat-Bold.ttf"
+    },
+    "fsElliotPro": {
+      "regular": "/fonts/FSElliotPro-Regular.woff2",
+      "bold": "/fonts/FSElliotPro-Bold.woff2",
+      "heavy": "/fonts/FSElliotPro-Heavy.woff2"
+    }
+  },
+  "icons": {
+    "favicon": "/assets/favicon.ico"
+  }
+}

@@ -1,7 +1,12 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import { defineConfig } from 'vitest/config';
+import { resolve } from 'path';
 
 export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./tests/setup.ts'],
+  },
   resolve: {
     alias: {
       '@core': resolve(__dirname, 'src/core'),
@@ -12,13 +17,7 @@ export default defineConfig({
       '@services': resolve(__dirname, 'src/services'),
       '@utils': resolve(__dirname, 'src/utils'),
       '@types': resolve(__dirname, 'src/types'),
-      '@styles': resolve(__dirname, 'src/styles')
-    }
+      '@styles': resolve(__dirname, 'src/styles'),
+    },
   },
-  build: {
-    target: 'esnext',
-    esbuild: {
-      target: 'esnext'
-    }
-  }
-})
+});

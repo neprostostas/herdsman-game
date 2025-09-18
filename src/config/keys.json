@@ -1,0 +1,16 @@
+{
+  "movement": {
+    "up": ["ArrowUp", "KeyW"],
+    "down": ["ArrowDown", "KeyS"],
+    "left": ["ArrowLeft", "KeyA"],
+    "right": ["ArrowRight", "KeyD"]
+  },
+  "game": {
+    "pause": ["Escape"],
+    "resume": ["Escape", "Space"]
+  },
+  "ui": {
+    "start": ["Space", "Enter"],
+    "playAgain": ["Space", "Enter"]
+  }
+}

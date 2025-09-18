@@ -1,0 +1,15 @@
+{
+  "level1": {
+    "name": "Tutorial",
+    "animalCount": 10,
+    "spawnRules": {
+      "minDistanceFromHero": 50,
+      "minDistanceFromYard": 50,
+      "minDistanceFromOtherAnimals": 50,
+      "edgeMargin": 12
+    },
+    "winCondition": {
+      "deliverAllAnimals": true
+    }
+  }
+}
